@@ -1,0 +1,19 @@
+header {
+    width: calc(100% - 2px);
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 75px;
+}
+
+.language {
+    /*width: 100%;*/
+    display: flex;
+    align-items: center;
+}
+
+select {
+    max-height: 30px;
+    /*margin-right: 10px;*/
+}
+

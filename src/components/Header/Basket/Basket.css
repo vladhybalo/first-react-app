@@ -1,0 +1,13 @@
+img {
+    width: 100%;
+    height: 100%;
+    max-width: 100px;
+    max-height: 75px;
+    object-fit: cover;
+
+}
+
+.basket {
+    /*width: 100%;*/
+    display: flex;
+}
