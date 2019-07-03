@@ -28,10 +28,6 @@ const productsList = [
     },
 ];
 
-function f() {
-    
-}
-
 function Basket() {
     return (
         <div>

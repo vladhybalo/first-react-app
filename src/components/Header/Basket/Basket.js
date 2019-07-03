@@ -2,15 +2,16 @@ import React from 'react'
 import logo from '../../../assets/basket logo.jpg'
 import BasicLable from '../../BasicLabel'
 import './Basket.css'
+import {Link} from 'react-router-dom'
 
 function Basket() {
     return (
-        <div className='basket'>
+        <Link to='/basket' className='basket'>
             <img src={logo} alt="basket logotype"/>
             <BasicLable>
                 Basket
             </BasicLable>
-        </div>
+        </Link>
     )
 }
 

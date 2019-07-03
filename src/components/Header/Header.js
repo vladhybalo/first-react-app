@@ -1,24 +1,12 @@
 import React from 'react'
 import Basket from './Basket'
-import BasicLabel from '../BasicLabel'
+import LanguageSelect from './LanguageSelect'
 import './Header.css'
 
 function Header() {
     return (
         <header>
-            <div className='language'>
-                <select name="" id="">
-                    <option value="en">
-                        En
-                    </option>
-                    <option value="ukr">
-                        Ukr
-                    </option>
-                </select>
-                <BasicLabel>
-                    Catalog
-                </BasicLabel>
-            </div>
+            <LanguageSelect/>
             <Basket/>
         </header>
     )
