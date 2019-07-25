@@ -2,10 +2,11 @@ import React from 'react'
 import Product from './Product'
 import './Products.css'
 import {connect} from 'react-redux';
+import {addProductToBasket} from '../../store/actions'
 
 class Products extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         // const products = [
         //     {
@@ -46,7 +47,7 @@ class Products extends React.Component {
         // ];
 
         const productsList = this.props.products.map(item => {
-            return <Product name={item.name} price={item.price} id={item.id} key={item.id}/>
+            return <Product onClick={()=>this.props.addToBasket(item)} name={item.name} price={item.price} id={item.id} key={item.id}/>
         });
 
         this.state = {
@@ -64,9 +65,21 @@ class Products extends React.Component {
 
 Products.displayName = 'ProductsComponent';
 
+function mapStateToProps(state) {
+    console.log(state);
+    return {products: state.products}
+}
+
+function mapDispatchToProps(dispatch) {
+    return{
+        addToBasket(product){
+            console.log(product)
+            dispatch(addProductToBasket(product))
+        }
+    }
+}
+
 export default connect(
-    state => ({
-        products: state.products,
-    }),
-    dispatch => ({})
-)(Products)
+    mapStateToProps,
+    mapDispatchToProps)
+(Products)

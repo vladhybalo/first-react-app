@@ -10,7 +10,6 @@ function App() {
         <div>
             <Router>
                 <Header/>
-
                 <Route path="/" exact component={Home}/>
                 <Route path="/basket/" component={Basket}/>
                 <Route path="/about/" component={Appreciation} />

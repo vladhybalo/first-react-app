@@ -11,13 +11,15 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
     "redux-devtools": "^3.5.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch database.json"
   },
   "eslintConfig": {
     "extends": "react-app"

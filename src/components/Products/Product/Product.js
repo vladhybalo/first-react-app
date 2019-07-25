@@ -2,7 +2,7 @@ import React from 'react'
 import './Product.css'
 import bell from '../../../assets/bell.png'
 
-function Product() {
+function Product(props) {
     return (
         <div className='product-item'>
             <div className='product-item__image__wrap'>
@@ -14,7 +14,7 @@ function Product() {
             <p>
                 Product price 5$
             </p>
-            <button>
+            <button onClick={props.onClick}>
                 Buy
             </button>
         </div>

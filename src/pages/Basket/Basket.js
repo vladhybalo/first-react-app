@@ -32,7 +32,7 @@ import {connect} from "react-redux";
 function Basket() {
     return (
         <div>
-            {basketProducts.map(item => {
+            {this.props.basketProducts.map(item => {
                 return <BuyingProduct name={item.name} price={item.productNumbers} />
             })}
             {this.props.busketProducts.ma}

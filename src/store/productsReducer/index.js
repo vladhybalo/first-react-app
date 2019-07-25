@@ -1,6 +1,8 @@
-import {products} from '../defaultState'
+import defaultState from '../defaultState'
 
-function productReducer(state = products, ) {
+console.log('products');
+
+function productReducer(state = defaultState.products, ) {
     return state;
 }
 
