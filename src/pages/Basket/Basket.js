@@ -32,7 +32,7 @@ import {connect} from "react-redux";
 function Basket() {
     return (
         <div>
-            {productsList.map(item => {
+            {basketProducts.map(item => {
                 return <BuyingProduct name={item.name} price={item.productNumbers} />
             })}
             {this.props.busketProducts.ma}
@@ -42,4 +42,8 @@ function Basket() {
 
 Basket.displayName = 'BasketPage';
 
-export default Basket;
+export default connect(
+    state => ({
+        basketProducts: state.basketProducts,
+    })
+)(Basket);

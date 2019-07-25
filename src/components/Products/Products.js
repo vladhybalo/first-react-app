@@ -1,50 +1,51 @@
 import React from 'react'
 import Product from './Product'
 import './Products.css'
+import {connect} from 'react-redux';
 
 class Products extends React.Component {
     constructor() {
         super();
 
-        const products = [
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 1,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 2,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 3,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 4,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 5,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 6,
-            },
-            {
-                name: 'Product 1',
-                price: 5,
-                id: 7,
-            },
-        ];
+        // const products = [
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 1,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 2,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 3,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 4,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 5,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 6,
+        //     },
+        //     {
+        //         name: 'Product 1',
+        //         price: 5,
+        //         id: 7,
+        //     },
+        // ];
 
-        const productsList = products.map(item => {
+        const productsList = this.props.products.map(item => {
             return <Product name={item.name} price={item.price} id={item.id} key={item.id}/>
         });
 
@@ -63,4 +64,9 @@ class Products extends React.Component {
 
 Products.displayName = 'ProductsComponent';
 
-export default Products;
+export default connect(
+    state => ({
+        products: state.products,
+    }),
+    dispatch => ({})
+)(Products)
