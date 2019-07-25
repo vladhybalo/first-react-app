@@ -1,6 +1,7 @@
 import React from 'react'
 import BuyingProduct from './BuyingProduct'
 import {connect} from "react-redux";
+import BasketBuyAllButton from '../../components/BasketBuyAllButton'
 
 // const productsList = [
 //     {
@@ -29,13 +30,13 @@ import {connect} from "react-redux";
 //     },
 // ];
 
-function Basket() {
+function Basket(props) {
     return (
         <div>
-            {this.props.basketProducts.map(item => {
-                return <BuyingProduct name={item.name} price={item.productNumbers} />
+            {props.basketProducts.map(({name, price, productsNumber, id}) => {
+                return <BuyingProduct name={name} price={price} productsNumber={productsNumber} key={id}/>
             })}
-            {this.props.busketProducts.ma}
+            <BasketBuyAllButton>Buy All</BasketBuyAllButton>
         </div>
     )
 }
@@ -45,5 +46,8 @@ Basket.displayName = 'BasketPage';
 export default connect(
     state => ({
         basketProducts: state.basketProducts,
+    }),
+    dispatch => ({
+
     })
 )(Basket);

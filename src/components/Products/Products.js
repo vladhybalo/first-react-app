@@ -73,7 +73,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return{
         addToBasket(product){
-            console.log(product)
+            console.log(product);
             dispatch(addProductToBasket(product))
         }
     }
@@ -81,5 +81,5 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps)
-(Products)
+    mapDispatchToProps,
+)(Products)
