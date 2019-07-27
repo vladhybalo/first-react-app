@@ -1,7 +1,7 @@
 import React from 'react'
 import BuyingProduct from './BuyingProduct'
 import {connect} from "react-redux";
-import BasketBuyAllButton from '../../components/BasketBuyAllButton'
+import BasketBuyAllButton from '../../components/BasketBuyAllButton';
 
 // const productsList = [
 //     {
@@ -48,6 +48,8 @@ export default connect(
         basketProducts: state.basketProducts,
     }),
     dispatch => ({
-
+        // initProducts: () => {
+        //     dispatch(initProductsList());
+        // }
     })
 )(Basket);

@@ -4,7 +4,7 @@ function Count({number}) {
     return (
         <label>
             Count
-            <input type="number" value={number}/>
+            <input type="number" defaultValue={number}  />
         </label>
     )
 }

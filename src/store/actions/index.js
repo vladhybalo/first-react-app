@@ -1,3 +1,5 @@
+import initProductsList from './productsActions/initProductsList'
+
 function addProductToBasket(product) {
     return {
         type: 'ADD_PRODUCT_TO_BASKET',
@@ -5,4 +7,4 @@ function addProductToBasket(product) {
     }
 }
 
-export {addProductToBasket};
+export {addProductToBasket, initProductsList};

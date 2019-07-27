@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^0.15.0"
+    "json-server": "^0.15.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

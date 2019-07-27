@@ -9,10 +9,10 @@ function Product(props) {
                 <img src={bell} className='product-item__image' alt="product logotype"/>
             </div>
             <h3>
-                Product name
+                {props.name}
             </h3>
             <p>
-                Product price 5$
+                Product price {props.price}
             </p>
             <button onClick={props.onClick}>
                 Buy

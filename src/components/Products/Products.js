@@ -4,6 +4,8 @@ import './Products.css'
 import {connect} from 'react-redux';
 import {addProductToBasket} from '../../store/actions'
 
+import {initProductsList} from '../../store/actions'
+
 class Products extends React.Component {
     constructor(props) {
         super(props);
@@ -46,18 +48,24 @@ class Products extends React.Component {
         //     },
         // ];
 
+
+
+        this.state = {
+            // productsList,
+        }
+    }
+
+    componentDidMount() {
+        this.props.initProducts();
+    }
+
+    render() {
         const productsList = this.props.products.map(item => {
             return <Product onClick={()=>this.props.addToBasket(item)} name={item.name} price={item.price} id={item.id} key={item.id}/>
         });
-
-        this.state = {
-            productsList,
-        }
-    }
-    render() {
         return (
             <div className='products-list'>
-                {this.state.productsList}
+                { productsList }
             </div>
         )
     }
@@ -75,6 +83,9 @@ function mapDispatchToProps(dispatch) {
         addToBasket(product){
             console.log(product);
             dispatch(addProductToBasket(product))
+        },
+        initProducts: () => {
+            dispatch(initProductsList());
         }
     }
 }
